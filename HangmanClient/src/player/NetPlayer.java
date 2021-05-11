@@ -15,7 +15,7 @@ public class NetPlayer {
 
 	public void update(String secretWord, int missingLetters, int failedAttempts, String knownLetters) {
 
-		if (missingLetters == MAX_FAILED_ATTEMPTS) {
+		if (failedAttempts == MAX_FAILED_ATTEMPTS) {
 			printBanner("Hai perso!  La parola da indovinare era '" + secretWord + "'");
 		} else if (missingLetters == 0) {
 			printBanner("Hai indovinato!   (" + secretWord + ")");
