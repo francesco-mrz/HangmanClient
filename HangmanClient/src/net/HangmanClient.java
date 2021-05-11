@@ -33,20 +33,29 @@ public class HangmanClient {
 		String secretWord = in.readLine();
 		
 //		System.out.println("####"+knownLettersg);
+		int exit=1;
 		
 		while (true) {
+
 			String knownLettersg = in.readLine();
 			int missingLetters = Integer.valueOf(in.readLine());
 			int failedAttempts = Integer.valueOf(in.readLine());;
 			player.update(secretWord, missingLetters, failedAttempts, knownLettersg);
-			
+
+			exit=Integer.valueOf(in.readLine());
+			//System.out.println(exit);
+			if(exit==0){
+				break;
+			}
+
 			char c = player.chooseLetter();
 			out.println(c);
 			out.flush();			
 //			int missingLetters = in.read();
 //			int failedAttempts = in.read();
-			
 		}
+
+		System.out.println("Gioco concluso");
 
 	}
 }
